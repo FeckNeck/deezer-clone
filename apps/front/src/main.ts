@@ -2,12 +2,16 @@ import { createApp } from "vue";
 import App from "./App.vue";
 import "./style.css";
 import { createRouter, createWebHistory } from "vue-router";
-// import { createPinia } from "pinia";
+import { createPinia } from "pinia";
 
 const router = createRouter({
   routes: [
     {
-      path: "/TrackList",
+      path: "/",
+      component: () => import("./components/Playlists.vue"),
+    },
+    {
+      path: "/playlist/:id",
       component: () => import("./components/TrackList.vue"),
     },
   ],
@@ -16,6 +20,6 @@ const router = createRouter({
 
 const app = createApp(App);
 
-// app.use(createPinia());
+app.use(createPinia());
 app.use(router);
 app.mount("#app");
