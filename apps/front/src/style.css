@@ -23,6 +23,11 @@ body,
   height: 100vh;
 }
 
+@font-face {
+  font-family: "Nunito";
+  src: url("./assets/Nunito-Regular.ttf") format("truetype");
+}
+
 #app {
   color: white;
   font-family: Nunito;
